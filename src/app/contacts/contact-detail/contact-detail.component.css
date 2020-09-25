@@ -1,0 +1,36 @@
+#container {
+    margin-right: 45%;
+}
+
+.header-title {
+    font-weight: bolder;
+    margin-top: .5em;
+    margin-bottom: 1em;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#button {
+    margin: 1em;
+}
+
+.panel-content {
+    display: flex;
+    flex-direction: row;
+    margin: .5em;
+    margin-left: 0em;
+}
+
+.panel-bold {
+    font-weight: bolder;
+    margin-right: .5em;
+}
+
+#detail-pic {
+    margin-bottom: .5em;
+}

@@ -1,0 +1,13 @@
+#container {
+    margin-left: 25%;
+}
+
+#heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.header-title {
+    font-weight: bolder;
+}
