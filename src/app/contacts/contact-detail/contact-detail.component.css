@@ -1,7 +1,3 @@
-#container {
-    margin-right: 45%;
-}
-
 .header-title {
     font-weight: bolder;
     margin-top: .5em;
@@ -17,20 +13,4 @@
 
 #button {
     margin: 1em;
-}
-
-.panel-content {
-    display: flex;
-    flex-direction: row;
-    margin: .5em;
-    margin-left: 0em;
-}
-
-.panel-bold {
-    font-weight: bolder;
-    margin-right: .5em;
-}
-
-#detail-pic {
-    margin-bottom: .5em;
 }

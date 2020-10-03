@@ -1,8 +1,10 @@
-<cms-header></cms-header>
+<cms-header (selectedViewEvent)="switchView($event)"></cms-header>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <cms-contacts></cms-contacts>
+            <cms-contacts *ngIf="selectedView === 'contacts'"></cms-contacts>
+            <cms-message-list *ngIf="selectedView === 'messages'"></cms-message-list>
+            <cms-documents *ngIf="selectedView === 'documents'"></cms-documents>
         </div>
     </div>
 </div>
