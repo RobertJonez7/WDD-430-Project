@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header.component';
@@ -34,7 +35,13 @@ import { DropdownDirective } from './shared/dropdown.directive';
     DropdownDirective
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot([
+      {path: '', component: DocumentsComponent},
+      {path: 'documents', component: DocumentsComponent},
+      {path: 'messages', component: MessageListComponent},
+      {path: 'contacts', component: ContactsComponent}
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent]

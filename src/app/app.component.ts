@@ -7,11 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'cms';
-  selectedView = 'contacts';
-
-  switchView(event: string) {
-    this.selectedView = event;
-  }
 }
 
 
