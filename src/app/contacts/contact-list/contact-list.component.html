@@ -1,13 +1,13 @@
 <div class="panel panel-default" id="container">
     <div class="panel-heading" id="heading">
         <h4 class="header-title">Contacts</h4>
-        <button class="btn btn-success">New Contact</button>
+        <a class="btn btn-success" routerLink="/contacts/new">New Contact</a>
     </div>
     <div class="panel-body">
         <cms-contact-item
-            *ngFor="let contact of contacts"
+            *ngFor="let contact of contacts; let i = index"
             [contact]="contact"
-            (click)="onSelected(contact)"
+            [index] = "i"
         >
         </cms-contact-item>
     </div>

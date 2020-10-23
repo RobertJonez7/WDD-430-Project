@@ -4,8 +4,8 @@
         <div class="header-content">
             <img [src]="contact.imageURL" alt="profile-image" id="detail-pic" style="max-height: 150px;">
             <div>
-                <button class="btn btn-primary" id="button">Edit</button>
-                <button class="btn btn-danger">Delete</button>
+                <a class="btn btn-primary" id="button" [routerLink]="['/contacts', id, 'edit']">Edit</a>
+                <a class="btn btn-danger" (click)="onDelete()">Delete</a>
             </div>
         </div>
     </div>
