@@ -8,6 +8,10 @@
             *ngFor="let contact of contacts; let i = index"
             [contact]="contact"
             [index] = "i"
+            dnd-draggable
+            [dragEnabled]="true"
+            [dragData]="contact"
+            [dropZones]="['contactGroup']"
         >
         </cms-contact-item>
     </div>

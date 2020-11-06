@@ -39,7 +39,7 @@ export class ContactService {
         return maxId;
       }
     
-      addDocument(newContact: Contact) {
+      addContact(newContact: Contact) {
         if(!newContact) {
           return;
         }
@@ -53,7 +53,7 @@ export class ContactService {
         this.contactChangedEvent.next(documentListClone);
       }
     
-      updateDocument(originalContact: Contact, newContact: Contact) {
+      updateContact(originalContact: Contact, newContact: Contact) {
         if(!originalContact || !newContact) {
           return;
         }
