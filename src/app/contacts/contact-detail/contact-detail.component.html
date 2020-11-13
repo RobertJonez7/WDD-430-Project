@@ -2,7 +2,7 @@
     <div class="panel-heading" id="heading">
         <h4 class="header-title">{{ contact?.name }}</h4>
         <div class="header-content">
-            <img [src]="contact.imageURL" alt="profile-image" id="detail-pic" style="max-height: 150px;">
+            <img src="{{ contact?.imageUrl }}" alt="profile-image" id="detail-pic" style="max-height: 150px;">
             <div>
                 <a class="btn btn-primary" id="button" [routerLink]="['/contacts', id, 'edit']">Edit</a>
                 <a class="btn btn-danger" (click)="onDelete()">Delete</a>

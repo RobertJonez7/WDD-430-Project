@@ -11,15 +11,15 @@ import { ContactService } from '../contact.service';
 
 export class ContactDetailComponent implements OnInit {
   contact: Contact;
-  id: number;
+  id: string;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
               private contactService: ContactService) { }
 
   ngOnInit(): void {
-      this.route.params.subscribe((params: Params) => {
-      this.id = +params['id'];
+    this.route.params.subscribe((params: Params) => {
+      this.id = params['id'];
       this.contact = this.contactService.getContact(this.id);
     });
   }
