@@ -16,7 +16,7 @@ export class ContactService {
     constructor(private http: HttpClient) {
       //this.getContacts();
     }
-
+    
     getContacts() {
       this.http.get('https://wdd430-f248b.firebaseio.com/contacts.json').subscribe((contacts: Contact[]) => {
           this.contacts = contacts;
@@ -26,6 +26,7 @@ export class ContactService {
       (error: any) => {
         console.log(error);
       });
+      return this.contacts;
     }
 
     getContact(id: string): Contact {

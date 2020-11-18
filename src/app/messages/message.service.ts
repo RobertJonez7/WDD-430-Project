@@ -10,10 +10,10 @@ export class MessageService {
   messageChangedEvent = new EventEmitter<Message[]>();
 
   constructor(private http: HttpClient) {
-    this.initializeMessages();
+    
   }
 
-  initializeMessages() {
+  getMessages() {
     this.http.get('https://wdd430-f248b.firebaseio.com/messages.json').subscribe((messages: Message[]) => {
         this.messages = messages;
         this.messageChangedEvent.next([...this.messages]);
@@ -21,6 +21,7 @@ export class MessageService {
     (error: any) => {
       console.log(error);
     });
+    return this.messages;
   }
 
   storeMessages() {
@@ -31,9 +32,9 @@ export class MessageService {
     });
   }
 
-  getMessages() {
-    return this.messages;
-  }
+  // getMessages() {
+  //   return this.messages;
+  // }
 
   addMessage(message: Message) {
     this.messages.push(message);
