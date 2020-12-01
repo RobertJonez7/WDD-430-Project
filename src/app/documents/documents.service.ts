@@ -17,7 +17,7 @@ export class DocumentsService {
   }
 
   initializeDocuments() {
-    this.http.get('https://wdd430-f248b.firebaseio.com/documents.json').subscribe((documents: Document[]) => {
+    this.http.get('http://localhost:3000/documents').subscribe((documents: Document[]) => {
         this.documents = documents;
         this.maxDocumentId = this.getMaxId();
         this.documentChangedEvent.next([...this.documents]);
@@ -61,7 +61,7 @@ export class DocumentsService {
 
   storeDocuments() {
     const documentsArray = JSON.stringify(this.documents);
-    this.http.put('https://wdd430-f248b.firebaseio.com/documents.json', documentsArray)
+    this.http.put('http://localhost:3000/documents', documentsArray)
     .subscribe(() => {
         this.documentChangedEvent.next([...this.documents]);
     });

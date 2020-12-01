@@ -18,7 +18,7 @@ export class ContactService {
     }
     
     getContacts() {
-      this.http.get('https://wdd430-f248b.firebaseio.com/contacts.json').subscribe((contacts: Contact[]) => {
+      this.http.get('http://localhost:3000/contacts').subscribe((contacts: Contact[]) => {
           this.contacts = contacts;
           this.maxDocumentId = this.getMaxId();
           this.contactChangedEvent.next(this.contacts.slice());
@@ -66,7 +66,7 @@ export class ContactService {
 
     storeContacts() {
       const contactsArray = JSON.stringify(this.contacts);
-      this.http.put('https://wdd430-f248b.firebaseio.com/contacts.json', contactsArray)
+      this.http.put('http://localhost:3000/contacts', contactsArray)
       .subscribe(() => {
           this.contactChangedEvent.next(this.contacts.slice());
       });

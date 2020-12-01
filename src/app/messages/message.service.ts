@@ -14,7 +14,7 @@ export class MessageService {
   }
 
   getMessages() {
-    this.http.get('https://wdd430-f248b.firebaseio.com/messages.json').subscribe((messages: Message[]) => {
+    this.http.get('http://localhost:3000/messages').subscribe((messages: Message[]) => {
         this.messages = messages;
         this.messageChangedEvent.next([...this.messages]);
     },
@@ -26,7 +26,7 @@ export class MessageService {
 
   storeMessages() {
     const messageArray = JSON.stringify(this.messages);
-    this.http.put('https://wdd430-f248b.firebaseio.com/messages.json', messageArray)
+    this.http.put('http://localhost:3000/messages', messageArray)
     .subscribe(() => {
         this.messageChangedEvent.next([...this.messages]);
     });
